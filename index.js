@@ -10,6 +10,7 @@ const weatherData = {
 
 const API_KEY = "4f9178ad0c01897df092cda6526c2cdc";
 
+// weather data
 async function getWeatherData(city) {
   try {
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
@@ -31,6 +32,7 @@ async function getWeatherData(city) {
   }
 }
 
+// houly forecast
 async function getHourlyForecast(city) {
   try {
     const API_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`;
@@ -48,6 +50,8 @@ async function getHourlyForecast(city) {
     errorMsg.innerHTML = " somthing went wrong on hourly forecast";
   }
 }
+
+// display weather data
 
 function displayWeatherData(data) {
   const div = document.createElement("div");
@@ -86,6 +90,7 @@ function displayWeatherData(data) {
   WeatherInfo.appendChild(div);
 }
 
+// display hourly forecast
 function displayHourlyForecast(list) {
   const forecastContainer = document.createElement("div");
   forecastContainer.classList.add("forecast");
